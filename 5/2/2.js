@@ -52,6 +52,7 @@ class Cart {
     this.items = []; // Массив товаров в корзине
     this.res = 'хйу';
     this.h3 = document.createElement('h3');
+    this.basket = document.getElementById('test');
   }
 
 
@@ -69,16 +70,35 @@ class Cart {
   }
 
   // Получение суммарной стоимости товаров в корзине
-  getTotalPrice(basket) {
+  getTotalPrice() {
     const totalPrice = this.items.reduce((total, item) => total + item.price, 0);
-    if (totalPrice === 0) {
-      this.res = `Корзина: ${totalPrice}`;
-    } 
+    this.res = `Корзина: ${totalPrice} рублей`;
     //Добавляем корзину на страницу
-      this.h3.textContent = this.res;
-      this.basket.appendChild(this.h3);
+    this.h3.textContent = this.res;
+    this.basket.appendChild(this.h3);
+  }
+  // Отображаем все товары в контейнере
+  getDisplayProd() {
+    const container = document.getElementById('container');
+    for (let i = 0; i < products.length; i++) {
+      const div = document.createElement('div');
+      div.className = 'product';
+      const h2 = document.createElement('h2');
+      const a = document.createElement('a');
+      h2.textContent = products[i].product + ' ' + products[i].price + '$';
+      a.textContent = 'Добавить в корзину';
+      a.href = '#';
+      a.addEventListener('click', () => {
+        cart.addProduct(products[i]);
+      });
+      div.appendChild(h2);
+      div.appendChild(a);
+      container.appendChild(div);
     }
   }
+}
+
+
 
 
 
@@ -88,8 +108,9 @@ const cart = new Cart();
 // // Добавляем товары в корзину
 cart.addProduct(products[0]);
 cart.addProduct(products[2]);
-var basket = document.getElementById('test')
-cart.getTotalPrice(basket);
+cart.getTotalPrice();
+cart.getDisplayProd();
+// cart.getTotalPrice(basket);
 // cart.addProduct(products[4]);
 // cart.addProduct(products[7]);
 

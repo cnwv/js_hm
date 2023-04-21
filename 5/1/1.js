@@ -61,11 +61,3 @@ function generateChessboard(container) {
 const container = document.getElementById('chessboard-container');
 generateChessboard(container);
 
-const test = document.getElementById('test');
-anyText = document.createElement('h3');
-anyText.textContent = 'sdkfbskjdfbkjsbdfkjbsdkjfbkj'; 
-anyText.style.fontSize = '20px';
-anyText.style.fontWeight = 'bold';
-test.appendChild(anyText);
-
-
