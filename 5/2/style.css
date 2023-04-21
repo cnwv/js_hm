@@ -30,7 +30,9 @@
 }
 
 #test {
-  margin-left: 80%;
+  position: sticky;
+  top: 2%;
+  margin-left: 85%;
   padding-top: 2%;
   justify-content: end;
   align-items: flex-end;
