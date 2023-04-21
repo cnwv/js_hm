@@ -1,0 +1,34 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cart {
+  width: 800px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 200px;
+  box-sizing: border-box;
+}
+.product {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.category {
+  font-size: 10px;
+}
+
+#basket__header {
+  margin-left: 80%;
+  margin-top: 2%;
+  justify-content: end;
+  align-items: flex-end;
+}
