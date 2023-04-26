@@ -88,9 +88,10 @@ class Cart {
       h2.textContent = products[i].product + ' ' + products[i].price + '$';
       a.textContent = 'Добавить в корзину';
       a.href = '#';
-      a.addEventListener('click', () => {
+      a.addEventListener('click', (e) => {
         this.addProduct(products[i]);
-        this.getTotalPrice()
+        this.getTotalPrice();
+        e.preventDefault();
       })
       div.appendChild(h2);
       div.appendChild(a);
