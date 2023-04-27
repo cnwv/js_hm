@@ -59,6 +59,7 @@ class Cart {
   // Добавление товара в корзину
   addProduct(product) {
     this.items.push(product);
+    this.getTotalPrice();
   }
 
   // Удаление товара из корзины
@@ -90,7 +91,6 @@ class Cart {
       a.href = '#';
       a.addEventListener('click', (e) => {
         this.addProduct(products[i]);
-        this.getTotalPrice();
         e.preventDefault();
       })
       div.appendChild(h2);
